@@ -19,22 +19,23 @@ df = pd.read_excel(file)
 
 def search(val):
     # PALABRA CLAVE A BUSCAR
-    keyword = val
+    st.write(df.head())
+    # keyword = val
 
-    # Filter to include only records containing 'marketing' in 'nombreSesion'
-    data_df = df[df['nombreSesion'].str.contains(keyword, na=False, case=False)]
+    # # Filter to include only records containing 'marketing' in 'nombreSesion'
+    # data_df = df[df['nombreSesion'].str.contains(keyword, na=False, case=False)]
 
-    # Group by 'Profesor' and calculate the mean of 'media' for each group
-    grouped = data_df.groupby('Profesor')
+    # # Group by 'Profesor' and calculate the mean of 'media' for each group
+    # grouped = data_df.groupby('Profesor')
 
-    # Filter to include only those groups with at least 10 entries
-    filtered_grouped = grouped.filter(lambda x: len(x) >= 1)
+    # # Filter to include only those groups with at least 10 entries
+    # filtered_grouped = grouped.filter(lambda x: len(x) >= 1)
 
-    # Calculate the mean of 'media' for each group in the filtered DataFrame
-    grouped_df = filtered_grouped.groupby('Profesor')['media'].mean()
+    # # Calculate the mean of 'media' for each group in the filtered DataFrame
+    # grouped_df = filtered_grouped.groupby('Profesor')['media'].mean()
 
-    # Sort the DataFrame in descending order by 'media'
-    st.write(grouped_df.sort_values(ascending=False))
+    # # Sort the DataFrame in descending order by 'media'
+    # st.write(grouped_df.sort_values(ascending=False))
 
 with st.form("my_form"):
    st.title("Buscar profesores")
