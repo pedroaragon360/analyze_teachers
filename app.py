@@ -15,7 +15,7 @@ response.raise_for_status()  # This will raise an error if the download failed
 
 # Read the file into a pandas DataFrame
 file = BytesIO(response.content)
-df = pd.read_excel(file, header=1)
+df = pd.read_excel(file, header=0, index_col=None)
 
 def search(val):
     # PALABRA CLAVE A BUSCAR
