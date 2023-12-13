@@ -40,6 +40,6 @@ with st.form("my_form"):
    st.title("Buscar profesores")
    title = st.text_input('Movie title', 'Life of Brian')
    submitted = st.form_submit_button("Submit")
-   if submitted:
-       search(title)
+if submitted:
+    search(title)
 
