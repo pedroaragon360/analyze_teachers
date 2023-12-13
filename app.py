@@ -34,7 +34,6 @@ def search(val):
     # Sort the DataFrame in descending order by 'media'
     st.write(grouped_df.sort_values(ascending=False))
 
-
 with st.form("my_form"):
    st.title("Buscar profesores")
    title = st.text_input('Movie title', 'Life of Brian')
