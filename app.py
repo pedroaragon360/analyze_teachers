@@ -40,3 +40,4 @@ with st.form("my_form"):
    submitted = st.form_submit_button("Submit")
    if submitted:
        search(title)
+
