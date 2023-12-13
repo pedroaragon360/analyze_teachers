@@ -34,7 +34,7 @@ def search(val):
     grouped_df = filtered_grouped.groupby('Profesor')['media'].agg(['mean', 'count'])
 
     # Sort the DataFrame in descending order by 'media'
-    st.write(grouped_df.sort_values(ascending=False))
+    st.write(grouped_df.sort_values(by='mean',ascending=False))
 
 with st.form("my_form"):
    st.title("Buscar profesores")
