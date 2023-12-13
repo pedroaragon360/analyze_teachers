@@ -3,6 +3,7 @@ import streamlit as st
 import requests
 import pandas as pd
 from io import BytesIO
+import openpyxl
 
 # URL of the Excel file
 url = st.secrets["url"]
