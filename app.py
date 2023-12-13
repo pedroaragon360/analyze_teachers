@@ -31,7 +31,7 @@ def search(val):
     filtered_grouped = grouped.filter(lambda x: len(x) >= 1)
 
     # Calculate the mean of 'media' for each group in the filtered DataFrame
-    grouped_df = filtered_grouped.groupby('Profesor')['media'].mean()
+    grouped_df = filtered_grouped.groupby('Profesor')['media'].agg(['mean', 'count'])
 
     # Sort the DataFrame in descending order by 'media'
     st.write(grouped_df.sort_values(ascending=False))
