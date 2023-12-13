@@ -19,7 +19,7 @@ df = pd.read_excel(file, header=0)
 
 def search(val):
     # PALABRA CLAVE A BUSCAR
-    st.write(df.head())
+    st.write(df.columns)
     # keyword = val
 
     # # Filter to include only records containing 'marketing' in 'nombreSesion'
