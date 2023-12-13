@@ -34,12 +34,14 @@ def search(val):
     grouped_df = filtered_grouped.groupby('Profesor')['media'].agg(['mean', 'count'])
 
     # Sort the DataFrame in descending order by 'media'
-    st.write(grouped_df.sort_values(by='mean',ascending=False))
+    st.table(grouped_df.sort_values(by='mean',ascending=False))
+
+st.set_page_config(layout="wide")
 
 with st.form("my_form"):
    st.title("Buscar profesores")
-   title = st.text_input('Movie title', 'Life of Brian')
-   submitted = st.form_submit_button("Submit")
+   title = st.text_input('Nombre de sesión', 'analitica|analytics')
+   submitted = st.form_submit_button("Buscar")
 if submitted:
     search(title)
 
