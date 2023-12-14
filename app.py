@@ -10,9 +10,21 @@ if 'authed' not in st.session_state:
 
 # URL of the Excel file
 url = st.secrets["url"]
-password = st.secrets["pass"]
+valid_password = st.secrets["pass"]
 
-if st.session_state.authed == 1:
+if st.session_state.authed == 0:
+
+    with st.form("Login"):
+        user_password = st.text_input('Clave', '')
+        loginSubmitted = st.form_submit_button("Identificarse")
+
+    if loginSubmitted:
+        if user_password == valid_password:
+            st.session_state.authed = 1
+        else:
+            st.write("Clave no valida")
+            
+else:    
     # Fetch the file
     response = requests.get(url)
     response.raise_for_status()  # This will raise an error if the download failed
@@ -49,14 +61,3 @@ if st.session_state.authed == 1:
         submitted = st.form_submit_button("Buscar")
         if submitted:
             search(title)
-else:
-    with st.form("Login"):
-        loginpass = st.text_input('Clave', '')
-        gologin = st.form_submit_button("Identificarse")
-
-if gologin:
-    if loginpass == password:
-        st.session_state.authed = 1
-        st.rerun()
-    else:
-        st.write("Clave no valida")
