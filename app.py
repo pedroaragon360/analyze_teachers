@@ -12,7 +12,8 @@ if 'authed' not in st.session_state:
 url = st.secrets["url"]
 valid_password = st.secrets["pass"]
 query_params = st.experimental_get_query_params()
-URL_pass = (if 'pass' in query_params) ? query_params["pass"][0] : ''
+URL_pass = query_params["pass"][0] if 'pass' in query_params else ''
+
 if st.session_state.authed == 0:
 
     with st.form("Login"):
