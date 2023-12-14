@@ -5,8 +5,8 @@ import pandas as pd
 from io import BytesIO
 import openpyxl
 
-st.session_state.authed = 0
-
+if 'authed' not in st.session_state:
+    st.session_state.authed = 0
 
 # URL of the Excel file
 url = st.secrets["url"]
