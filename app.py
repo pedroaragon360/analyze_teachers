@@ -51,8 +51,8 @@ if st.session_state.authed == 1:
             search(title)
 else:
     with st.form("Login"):
-    loginpass = st.text_input('Clave', '')
-    gologin = st.form_submit_button("Identificarse")
+        loginpass = st.text_input('Clave', '')
+        gologin = st.form_submit_button("Identificarse")
 
 if gologin:
     if loginpass == password:
