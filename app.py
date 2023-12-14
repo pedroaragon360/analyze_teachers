@@ -11,11 +11,12 @@ if 'authed' not in st.session_state:
 # URL of the Excel file
 url = st.secrets["url"]
 valid_password = st.secrets["pass"]
+query_params = st.experimental_get_query_params()
 
 if st.session_state.authed == 0:
 
     with st.form("Login"):
-        user_password = st.text_input('Clave', '')
+        user_password = st.text_input('Clave', query_params["pass"][0])
         loginSubmitted = st.form_submit_button("Identificarse")
 
     if loginSubmitted:
