@@ -21,6 +21,7 @@ if st.session_state.authed == 0:
     if loginSubmitted:
         if user_password == valid_password:
             st.session_state.authed = 1
+            st.rerun()
         else:
             st.write("Clave no valida")
             
