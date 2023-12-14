@@ -44,11 +44,11 @@ if st.session_state.authed == 1:
     st.set_page_config(layout="wide")
 
     with st.form("my_form"):
-    st.title("Buscar profesores")
-    title = st.text_input('Nombre de sesión', 'analitica|analytics')
-    submitted = st.form_submit_button("Buscar")
-    if submitted:
-        search(title)
+        st.title("Buscar profesores")
+        title = st.text_input('Nombre de sesión', 'analitica|analytics')
+        submitted = st.form_submit_button("Buscar")
+        if submitted:
+            search(title)
 else:
     with st.form("Login"):
     loginpass = st.text_input('Clave', '')
