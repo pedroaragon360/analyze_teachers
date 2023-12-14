@@ -57,3 +57,4 @@ else:
 if gologin:
     if loginpass == password:
         st.session_state.authed = 1
+        st.rerun()
