@@ -11,7 +11,7 @@ if 'authed' not in st.session_state:
 # URL of the Excel file
 url = st.secrets["url"]
 valid_password = st.secrets["pass"]
-query_params = st.experimental_get_query_params()
+query_params = st.query_params
 URL_pass = query_params["pass"][0] if 'pass' in query_params else ''
 
 if st.session_state.authed == 0:
